@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Code Redirect</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #101820;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  input {
+    width: 60px;
+    text-align: center;
+    font-size: 20px;
+    margin: 5px;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+  }
+  button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background: #00aaff;
+    color: white;
+    cursor: pointer;
+  }
+  p {
+    margin-top: 10px;
+    color: #ff5555;
+  }
+</style>
+</head>
+<body>
+
+<h2>Enter 4 Code Segments</h2>
+<div>
+  <input type="text" id="code1" maxlength="4">
+  <input type="text" id="code2" maxlength="4">
+  <input type="text" id="code3" maxlength="4">
+  <input type="text" id="code4" maxlength="4">
+</div>
+<button onclick="checkCode()">Submit</button>
+<p id="message"></p>
+
+<script>
+  function checkCode() {
+    const c1 = document.getElementById("code1").value.trim().toUpperCase();
+    const c2 = document.getElementById("code2").value.trim().toUpperCase();
+    const c3 = document.getElementById("code3").value.trim().toUpperCase();
+    const c4 = document.getElementById("code4").value.trim().toUpperCase();
+    const fullCode = `${c1}-${c2}-${c3}-${c4}`;
+
+    // Add your code-to-URL mappings here
+    const redirectMap = {
+      "AB12-CD34-EF56-GH78": "https://example.com/page1",
+      "1111-2222-3333-4444": "https://example.com/page2",
+      "ABCD-EFGH-IJKL-MNOP": "https://example.com/page3"
+    };
+
+    if (redirectMap[fullCode]) {
+      window.location.href = redirectMap[fullCode];
+    } else {
+      document.getElementById("message").textContent = "Invalid code. Please try again.";
+    }
+  }
+</script>
+
+</body>
+</html>
