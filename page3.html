@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Clue 3 - Skeleton Crypt</title>
+<style>
+body {
+  background: #222;
+  color: #fff;
+  font-family: "Creepster", sans-serif;
+  text-align: center;
+  padding-top: 100px;
+}
+button {
+  background: #fff;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 18px;
+}
+</style>
+</head>
+<body>
+  <h1>💀 Skeleton Crypt 💀</h1>
+  <p>Good job!!</p>
+  <p>Enter the depths of the chill place if you dare to reveal your final reward...</p>
+  <input type="text" id="code" maxlength="4">
+  <br>
+  <button onclick="checkCode()">Enter</button>
+  <p id="message"></p>
+  <button onclick="window.location.href='page2.html'">🔙 Back</button>
+
+<script>
+  function checkCode() {
+    const code = document.getElementById("code").value.trim();
+    if (code === "5583") {
+      window.location.href = "final.html";
+    } else {
+      document.getElementById("message").textContent = "🕷️ Wrong code...";
+    }
+  }
+</script>
+</body>
+</html>
