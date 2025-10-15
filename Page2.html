@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Clue 2 - Witch’s Workshop</title>
+<style>
+body {
+  background-color: #111;
+  color: #0ff;
+  font-family: "Creepster", sans-serif;
+  text-align: center;
+  padding-top: 100px;
+}
+button {
+  background: #0ff;
+  color: black;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-top: 10px;
+}
+</style>
+</head>
+<body>
+  <h1>🧙‍♀️ Witch’s Workshop 🧪</h1>
+  <p>You’re getting closer... go to the place where we get our food</p>
+  <input type="text" id="code" maxlength="4">
+  <br>
+  <button onclick="checkCode()">Enter</button>
+  <p id="message"></p>
+  <button onclick="window.location.href='page1.html'">🔙 Back</button>
+
+<script>
+  function checkCode() {
+    const code = document.getElementById("code").value.trim();
+    if (code === "9101") {
+      window.location.href = "page3.html";
+    } else {
+      document.getElementById("message").textContent = "👻 Wrong potion!";
+    }
+  }
+</script>
+</body>
+</html>
