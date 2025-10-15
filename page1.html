@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Clue 1 - Haunted Hallway</title>
+<style>
+body {
+  background-color: #000;
+  color: orange;
+  font-family: "Creepster", sans-serif;
+  text-align: center;
+  padding-top: 100px;
+}
+button {
+  background: orange;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-top: 15px;
+  font-size: 18px;
+}
+</style>
+</head>
+<body>
+  <h1>👻 Haunted Hallway 👻</h1>
+  <p>You did it!!!</p>
+  <p>Look at the big bed maybe under it??</p>
+  <input type="text" id="code" maxlength="4">
+  <br>
+  <button onclick="checkCode()">Enter</button>
+  <p id="message"></p>
+  <button onclick="window.location.href='index.html'">🔙 Back</button>
+
+<script>
+  function checkCode() {
+    const code = document.getElementById("code").value.trim();
+    if (code === "9361") {
+      window.location.href = "page2.html";
+    } else {
+      document.getElementById("message").textContent = "💀 Try again...";
+    }
+  }
+</script>
+</body>
+</html>
